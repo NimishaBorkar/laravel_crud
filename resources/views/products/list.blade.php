@@ -2,7 +2,7 @@
 @extends('layouts.layout')
 @section('content')
 
-<a href="{{url('products/create')}}" class="btn btn-success mb-2">Add</a>
+<a href="{{route('products.create')}}" class="btn btn-success mb-2">Add</a>
 <br>
 <div class="row">
 <div class="col-12">
@@ -26,10 +26,11 @@
 <td>{{ $product->description }}</td>
 <td>{{ date('Y-m-d', strtotime($product->created_at)) }}</td>
 
-<td><a href="{{url('products/edit',$product->id)}}" class="btn btn-primary">Edit</a></td>
+<td><a href="{{route('products.edit',$product->id)}}" class="btn btn-primary">Edit</a></td>
 <td>
-<form action="{{url('products/destroy',$product->id)}}" method="post">
+<form action="{{route('products.destroy',$product->id)}}" method="post">
 {{ csrf_field() }}
+@method('DELETE')
 <button class="btn btn-danger" type="submit">Delete</button>
 </form>
 </td>

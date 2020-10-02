@@ -2,9 +2,9 @@
 @section('content')
 <h2 style="margin-top: 12px;" class="text-center">Edit Product</a></h2>
 <br>
-<form action="{{url('products/update', $product_info->id)}}" method="POST" name="update_product" enctype="multipart/form-data">
+<form action="{{route('products.update', $product_info->id)}}" method="POST" name="update_product" enctype="multipart/form-data">
 {{ csrf_field() }}
-
+@method('PUT')
 <div class="row">
 <div class="col-md-12">
 <div class="form-group">

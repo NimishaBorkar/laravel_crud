@@ -2,7 +2,7 @@
 @section('content')
 <h2 style="margin-top: 12px;" class="text-center">Add Product</a></h2>
 <br>
-<form action="{{url('products/store')}}" method="POST" name="add_product" enctype="multipart/form-data">
+<form action="{{route('products.store')}}" method="POST" name="add_product" enctype="multipart/form-data">
 {{ csrf_field() }}
 <div class="row">
 <div class="col-md-12">
